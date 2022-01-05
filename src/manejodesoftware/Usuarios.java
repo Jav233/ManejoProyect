@@ -11,6 +11,7 @@ import java.util.Scanner;
 
 
 public class Usuarios {
+    String nombre, apellido, nombreUsuario, ciudad, direccion, telefono;
     public static Scanner sc = new Scanner(System.in);
     
     public boolean sesionAdministrador() {
