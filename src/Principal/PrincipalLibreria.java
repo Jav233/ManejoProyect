@@ -3,10 +3,10 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package manejodesoftware;
+package Principal;
 
 
-public class ManejoDeSoftware {
+public class PrincipalLibreria {
 
    
     public static void main(String[] args) {
