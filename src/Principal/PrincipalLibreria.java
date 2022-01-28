@@ -5,7 +5,7 @@
  */
 package Principal;
 
-import Vistas.Menu;
+import Vista.Menu;
 
 public class PrincipalLibreria {
 
