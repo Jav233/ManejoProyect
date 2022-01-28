@@ -7,7 +7,7 @@ package Controlador;
 
 import Modelo.Libro;
 import Modelo.Factura;
-import Vistas.IniciarSesion;
+import Vista.IniciarSesion;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import java.awt.Component;
