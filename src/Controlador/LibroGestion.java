@@ -6,8 +6,8 @@
 package Controlador;
 
 import Modelo.Libro;
-import Vistas.IniciarSesion;
-import Vistas.BuscarLibro;
+import Vista.IniciarSesion;
+import Vista.BuscarLibro;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import java.awt.Component;
