@@ -62,7 +62,7 @@ public class Menu extends javax.swing.JFrame {
             }
         });
 
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/libro-abierto3.png"))); // NOI18N
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/libro-abierto3.png")));
 
         menuDatabase.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/database_opt_menuBar.png"))); // NOI18N
         menuDatabase.setText("Login");
