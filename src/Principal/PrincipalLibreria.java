@@ -3,14 +3,16 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package manejodesoftware;
+package Principal;
 
+import Vista.Menu;
 
-public class ManejoDeSoftware {
+public class PrincipalLibreria {
 
    
     public static void main(String[] args) {
-       
+       Menu frmMenuOption = new Menu();
+        frmMenuOption.setVisible(true);
     }
     
 }
