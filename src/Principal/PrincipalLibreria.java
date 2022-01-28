@@ -5,12 +5,14 @@
  */
 package Principal;
 
+import Vistas.Menu;
 
 public class PrincipalLibreria {
 
    
     public static void main(String[] args) {
-       
+       Menu frmMenuOption = new Menu();
+        frmMenuOption.setVisible(true);
     }
     
 }
