@@ -7,6 +7,9 @@ package Vista;
 
 import Controlador.LibroGestion;
 import Controlador.Vaciar;
+import java.awt.Color;
+import javax.swing.JTextField;
+import javax.swing.border.LineBorder;
 
 /**
  *
@@ -24,6 +27,18 @@ public class IngresarLibro extends javax.swing.JFrame {
         initComponents();
         this.setTitle("Ingresar libro");
         setLocationRelativeTo(null);
+    }
+    
+    public void soloNumeros(java.awt.event.KeyEvent evt) {
+        char caracter = evt.getKeyChar();
+        if ((caracter < '0') || (caracter > '9')) {
+            evt.consume();
+        }
+    }
+    public void pintarVacio(JTextField text) {
+        if (text.getText().equals("")) {
+            text.setBorder(new LineBorder(Color.RED, 1));
+        }
     }
 
     /**
@@ -78,18 +93,38 @@ public class IngresarLibro extends javax.swing.JFrame {
         jlbCellphone.setBounds(30, 360, 120, 40);
 
         txtId.setToolTipText("Enter only numbers");
+        txtId.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                txtIdFocusLost(evt);
+            }
+        });
         pnl.add(txtId);
         txtId.setBounds(160, 110, 150, 30);
 
         txtAutor.setToolTipText("Don't use special characteres");
+        txtAutor.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                txtAutorFocusLost(evt);
+            }
+        });
         pnl.add(txtAutor);
         txtAutor.setBounds(160, 160, 150, 30);
 
         txtTitulo.setToolTipText("Don't use special characteres");
+        txtTitulo.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                txtTituloFocusLost(evt);
+            }
+        });
         pnl.add(txtTitulo);
         txtTitulo.setBounds(160, 210, 150, 30);
 
         txtCategoria.setToolTipText("Enter only 10 numbers");
+        txtCategoria.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                txtCategoriaFocusLost(evt);
+            }
+        });
         txtCategoria.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
                 txtCategoriaKeyPressed(evt);
@@ -112,6 +147,12 @@ public class IngresarLibro extends javax.swing.JFrame {
         jLabel1.setText("Edicion");
         pnl.add(jLabel1);
         jLabel1.setBounds(30, 260, 100, 40);
+
+        txtEdicion.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                txtEdicionFocusLost(evt);
+            }
+        });
         pnl.add(txtEdicion);
         txtEdicion.setBounds(160, 260, 150, 30);
 
@@ -121,9 +162,17 @@ public class IngresarLibro extends javax.swing.JFrame {
         jlbCellphone1.setBounds(30, 310, 110, 40);
 
         txtCantidad.setToolTipText("Enter only 10 numbers");
+        txtCantidad.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                txtCantidadFocusLost(evt);
+            }
+        });
         txtCantidad.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
                 txtCantidadKeyPressed(evt);
+            }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtCantidadKeyTyped(evt);
             }
         });
         pnl.add(txtCantidad);
@@ -135,9 +184,17 @@ public class IngresarLibro extends javax.swing.JFrame {
         jlbCellphone2.setBounds(30, 410, 120, 30);
 
         txtPrecio.setToolTipText("Enter only 10 numbers");
+        txtPrecio.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                txtPrecioFocusLost(evt);
+            }
+        });
         txtPrecio.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
                 txtPrecioKeyPressed(evt);
+            }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtPrecioKeyTyped(evt);
             }
         });
         pnl.add(txtPrecio);
@@ -226,6 +283,51 @@ public class IngresarLibro extends javax.swing.JFrame {
     private void txtPrecioKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtPrecioKeyPressed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtPrecioKeyPressed
+
+    private void txtPrecioKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtPrecioKeyTyped
+            soloNumeros(evt);
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtPrecioKeyTyped
+
+    private void txtCantidadKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCantidadKeyTyped
+       soloNumeros(evt);
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtCantidadKeyTyped
+
+    private void txtIdFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtIdFocusLost
+        pintarVacio(txtId);
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtIdFocusLost
+
+    private void txtAutorFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtAutorFocusLost
+        pintarVacio(txtAutor);
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtAutorFocusLost
+
+    private void txtTituloFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtTituloFocusLost
+        pintarVacio(txtTitulo);
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtTituloFocusLost
+
+    private void txtEdicionFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtEdicionFocusLost
+        pintarVacio(txtEdicion);
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtEdicionFocusLost
+
+    private void txtCategoriaFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtCategoriaFocusLost
+        pintarVacio(txtCategoria);
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtCategoriaFocusLost
+
+    private void txtCantidadFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtCantidadFocusLost
+        pintarVacio(txtCantidad);
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtCantidadFocusLost
+
+    private void txtPrecioFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtPrecioFocusLost
+        pintarVacio(txtPrecio);
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtPrecioFocusLost
 
     /**
      * @param args the command line arguments
